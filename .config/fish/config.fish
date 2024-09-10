@@ -1,3 +1,5 @@
+fastfetch
+
 set -g theme_display_user yes
 set -g theme_color_scheme dark
 set -g theme_display_git yes
