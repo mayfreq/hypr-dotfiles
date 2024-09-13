@@ -1,10 +1,32 @@
 * {
-    font-family: "JetBrains Mono Nerd Font", monospace;
-    background-color: #2e3440;
-    color: #d8dee9;
+  font-family: "JetBrains Mono Nerd Font";
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
 }
 
-#clock {
-    background-color: #4c566a;
-    color: #88c0d0;
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#bluetooth,
+#custom-spotify,
+#custom-weather,
+#custom-weather.default {
+  padding: 0px 15px;
+  color: #e5e5e5;
+  /* color: #bf616a; */
+  border-radius: 20px;
+  background-color: #1e1e1e;
 }
