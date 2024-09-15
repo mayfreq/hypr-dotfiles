@@ -6,146 +6,145 @@
     "position": "top",
     "height": 30,
     "spacing": 10,
-
+  
     // Modules
-    "modules-left": [
-        "hyprland/workspaces",
-        "temperature",
-        "custom/media"
-    ],
-    "modules-center": [
-        "clock"
-    ],
+    "modules-left": ["hyprland/workspaces", "temperature", "custom/media"],
+    "modules-center": ["clock"],
     "modules-right": [
-        "tray",
-        "custom/storage",
-        "memory",
-        "cpu",
-        "network",
-        "battery",
-        "wireplumber",
-        "custom/power"
+      "tray",
+      "custom/storage",
+      "memory",
+      "cpu",
+      "network",
+      "power-profiles-daemon",
+      "battery",
+      "wireplumber",
+      "hyprland/layout"
     ],
     // -------------------------------------------------------------------------
     // Modules
     // -------------------------------------------------------------------------
     "tray": {
-        "icon-size": 15,
-        "spacing": 5
+      "icon-size": 15,
+      "spacing": 5
     },
     "custom/storage": {
-        "format": " {}",
-        "format-alt": "{percentage}% ",
-        "format-alt-click": "click-right",
-        "return-type": "json",
-        "interval": 60,
-        "exec": "~/.config/waybar/modules/storage.sh"
+      "format": " {}",
+      "format-alt": "{percentage}% ",
+      "format-alt-click": "click-right",
+      "return-type": "json",
+      "interval": 60,
+      "exec": "~/.config/waybar/modules/storage.sh"
     },
     "memory": {
-        "interval": 30,
-        "format": "  {used:0.2f} / {total:0.0f} GB",
+      "interval": 30,
+      "format": "  {used:0.2f} / {total:0.0f} GB"
     },
     "cpu": {
-        "interval": 1,
-        "format": "{max_frequency}GHz <span color=\"darkgray\">| {usage}%</span>",
-        "max-length": 13,
-        "min-length": 13
+      "interval": 1,
+      "format": "{max_frequency}GHz <span color=\"darkgray\">| {usage}%</span>",
+      "max-length": 13,
+      "min-length": 13
     },
     "network": {
-        "format-wifi": "  {essid} ({signalStrength}%)",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format": "",
-        "format-disconnected": "",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
-        "on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
-        "interval": 10
+      "format-wifi": "  {essid} ({signalStrength}%)",
+      "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+      "format-linked": "{ifname} (No IP) ",
+      "format": "",
+      "format-disconnected": "",
+      "format-alt": "{ifname}: {ipaddr}/{cidr}",
+      "on-click":"np-applet",
+      // "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
+      "on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
+      "interval": 10
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
     },
     "battery": {
-        "interval": 2,
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+      "interval": 2,
+      "states": {
+        "good": 95,
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-icons": ["", "", "", "", ""]
     },
     "clock": {
-        "interval": 1,
-        "format": "  {:%H:%M:%S}",
-        "tooltip": false,
-        "timezone":"Europe/Istanbul"
+      "interval": 1,
+      "format": "  {:%H:%M:%S}",
+      "tooltip": false,
+      "timezone": "Europe/Istanbul"
     },
     "temperature": {
-        "interval": 30,
-        "critical-threshold": 80,
-        "format-critical": "  {temperatureC}°C",
-        "format": "{icon}  {temperatureC}°C",
-        "format-icons": ["", "", ""],
-        "max-length": 7,
-        "min-length": 7
+      "interval": 30,
+      "critical-threshold": 80,
+      "format-critical": "  {temperatureC}°C",
+      "format": "{icon}  {temperatureC}°C",
+      "format-icons": ["", "", ""],
+      "max-length": 7,
+      "min-length": 7
     },
     "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+      "format": "{icon} {}",
+      "return-type": "json",
+      "max-length": 40,
+      "format-icons": {
+        "spotify": "",
+        "default": "🎜"
+      },
+      "escape": true,
+      "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
     },
     "hyprland/workspaces": {
-        "all-outputs": true,
-        "format": "{name}",
-        "format-icons": {
-            "1": "一",
-            "2": "二",
-            "3": "三",
-            "4": "四",
-            "5": "五",
-            "6": "六",
-            "7": "七",
-            "8": "八",
-            "9": "九",
-            "10": "十"
-        },
-        "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
-        "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
-        "sort-by-number": true,
-        "active-only": false
+      "all-outputs": true,
+      "format": "{name}",
+      "format-icons": {
+        "1": "一",
+        "2": "二",
+        "3": "三",
+        "4": "四",
+        "5": "五",
+        "6": "六",
+        "7": "七",
+        "8": "八",
+        "9": "九",
+        "10": "十"
+      },
+      "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
+      "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
+      "sort-by-number": true,
+      "active-only": false
     },
     "wireplumber": {
-        "on-click": "pavucontrol",
-        "on-click-right": "amixer sset Master toggle 1>/dev/null",
-        //on-click: "${wpctl} set-mute @DEFAULT_AUDIO_SINK@ toggle";
-        //on-scroll-down: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04+";
-        //on-scroll-up: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04-";
-        "format": "<span foreground='#fab387'>{icon}</span>  {volume}%",
-        "format-muted": " ",
-        "format-source": "",
-        "format-source-muted": "",
-        //"format-muted": "<span foreground='#fab387'> </span>",
-        //"format-icons": [ "<span foreground='#fab387'></span>" ]
-        "format-icons": {
-            "headphone": " ",
-            "hands-free": " ",
-            "headset": " ",
-            "phone": " ",
-            "portable": " ",
-            "car": " ",
-            "default": [" ", " ", " "]
-        }
+      "on-click": "pavucontrol",
+      "on-click-right": "amixer sset Master toggle 1>/dev/null",
+      "format": "<span foreground='#fab387'>{icon}</span>  {volume}%",
+      "format-muted": " ",
+      "format-source": "",
+      "format-source-muted": "",
+      "max-volume": 150,
+      "format-icons": {
+        "headphone": " ",
+        "hands-free": " ",
+        "headset": " ",
+        "phone": " ",
+        "portable": " ",
+        "car": " ",
+        "default": [" ", " ", " "]
+      }
+    },
+    "hyprland/language": {
+      "format": "{short} {variant}"
     }
-}
+  }
+  

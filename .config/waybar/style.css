@@ -18,15 +18,13 @@
 #pulseaudio,
 #wireplumber,
 #custom-media,
+#power-profiles-daemon,
 #tray,
 #mode,
 #bluetooth,
-#custom-spotify,
-#custom-weather,
-#custom-weather.default {
+#custom-spotify {
   padding: 0px 15px;
   color: #e5e5e5;
-  /* color: #bf616a; */
   border-radius: 20px;
   background-color: #1e1e1e;
 }

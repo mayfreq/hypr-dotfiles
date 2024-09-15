@@ -5,13 +5,37 @@ sudo pacman -Syu --noconfirm
 
 # Install core packages
 sudo pacman -S --noconfirm \
-    hyprland hyprpaper hyprctl waybar wofi alacritty fish nerd-fonts-jetbrains-mono \
-    mako pipewire pipewire-pulse pipewire-media-session wireplumber \
-    grim slurp wl-clipboard wf-recorder \
-    xorg-xwayland polkit-gnome bluez bluez-utils blueman networkmanager swaylock \
-    gnome-keyring gvfs gvfs-mtp gvfs-smb gtk3 gtk4 ttf-jetbrains-mono noto-fonts noto-fonts-emoji \
-    pavucontrol sddm sddm-kcm \
-    xdg-desktop-portal-hyprland # Hyprland-specific portal for screen sharing and other integrations
+    hyprland \
+    hyprctl \ 
+    waybar \ 
+    wofi \ 
+    alacritty \
+    fish \
+    mako 
+    pipewire \
+    pipewire-pulse \
+    pipewire-media-session \
+    wireplumber \
+    xorg-xwayland \
+    polkit-gnome \
+    bluez \
+    bluez-utils \
+    blueberry \
+    networkmanager \
+    swaylock \
+    gnome-keyring\
+    gvfs \
+    gvfs-mtp \
+    gvfs-smb \
+    gtk3 \
+    gtk4 \
+    ttf-jetbrains-mono-nerd \
+    noto-fonts-emoji \
+    pavucontrol \
+    sddm \
+    sddm-kcm \
+    xdg-desktop-portal-hyprland \
+    xorg-xhost
 
 # Install NVIDIA drivers and Wayland compatibility packages
 sudo pacman -S --noconfirm \
