@@ -17,30 +17,27 @@ sudo pacman -S --noconfirm \
     pipewire-media-session \
     wireplumber \
     xorg-xwayland \
-    polkit-gnome \
     bluez \
     bluez-utils \
     blueberry \
     networkmanager \
     swaylock \
-    gnome-keyring\
     gvfs \
     gvfs-mtp \
     gvfs-smb \
     gtk3 \
     gtk4 \
-    ttf-jetbrains-mono-nerd \
+    
     noto-fonts-emoji \
     pavucontrol \
     sddm \
+
+    network-manager-applet \    
+    ttf-jetbrains-mono-nerd \
+    poolkit-kde-agent \
     sddm-kcm \
     xdg-desktop-portal-hyprland \
     xorg-xhost
-
-# Install NVIDIA drivers and Wayland compatibility packages
-sudo pacman -S --noconfirm \
-    nvidia-dkms nvidia-utils nvidia-settings egl-wayland libglvnd mesa mesa-utils \
-    vulkan-icd-loader libva-mesa-driver mesa-vdpau libva-nvidia-driver-git
 
 # Configure NVIDIA kernel mode settings
 sudo tee -a /etc/mkinitcpio.conf <<EOF
